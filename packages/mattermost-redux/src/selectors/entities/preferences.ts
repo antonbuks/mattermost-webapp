@@ -11,7 +11,6 @@ import {isGuest} from 'mattermost-redux/utils/user_utils';
 
 import {PreferenceType} from '@mattermost/types/preferences';
 import {GlobalState} from '@mattermost/types/store';
-import {Theme, ThemeKey} from 'mattermost-redux/types/themes';
 
 import {createShallowSelector} from 'mattermost-redux/utils/helpers';
 import {getPreferenceKey} from 'mattermost-redux/utils/preference_utils';
@@ -112,6 +111,42 @@ const getThemePreference = createSelector(
     },
 );
 
+export type ThemeKey = 'denim' | 'sapphire' | 'quartz' | 'indigo' | 'onyx';
+
+export type LegacyThemeType = 'Mattermost' | 'Organization' | 'Mattermost Dark' | 'Windows Dark';
+
+export type ThemeType = 'Denim' | 'Sapphire' | 'Quartz' | 'Indigo' | 'Onyx';
+
+export type Theme = {
+    [key: string]: string | undefined;
+    type?: ThemeType | 'custom';
+    sidebarBg: string;
+    sidebarText: string;
+    sidebarUnreadText: string;
+    sidebarTextHoverBg: string;
+    sidebarTextActiveBorder: string;
+    sidebarTextActiveColor: string;
+    sidebarHeaderBg: string;
+    sidebarTeamBarBg: string;
+    sidebarHeaderTextColor: string;
+    onlineIndicator: string;
+    awayIndicator: string;
+    dndIndicator: string;
+    mentionBg: string;
+    mentionBj: string;
+    mentionColor: string;
+    centerChannelBg: string;
+    centerChannelColor: string;
+    newMessageSeparator: string;
+    linkColor: string;
+    buttonBg: string;
+    buttonColor: string;
+    errorTextColor: string;
+    mentionHighlightBg: string;
+    mentionHighlightLink: string;
+    codeTheme: string;
+};
+
 const getDefaultTheme = createSelector('getDefaultTheme', getConfig, (config): Theme => {
     if (config.DefaultTheme && config.DefaultTheme in Preferences.THEMES) {
         const theme: Theme = Preferences.THEMES[config.DefaultTheme as ThemeKey];
@@ -170,6 +205,10 @@ export const shouldShowUnreadsCategory: (state: GlobalState) => boolean = create
         return serverDefault === General.DEFAULT_ON;
     },
 );
+
+export function getUnreadScrollPositionPreference(state: GlobalState): string {
+    return get(state, Preferences.CATEGORY_ADVANCED_SETTINGS, Preferences.UNREAD_SCROLL_POSITION, Preferences.UNREAD_SCROLL_POSITION_START_FROM_LEFT);
+}
 
 export function getCollapsedThreadsPreference(state: GlobalState): string {
     const configValue = getConfig(state)?.CollapsedThreads;
