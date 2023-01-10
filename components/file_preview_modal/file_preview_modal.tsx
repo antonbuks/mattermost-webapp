@@ -425,32 +425,6 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
                             onMouseLeave={this.onMouseLeaveImage}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <div
-                                className={classNames(
-                                    'file-preview-modal__content',
-                                    {
-                                        'file-preview-modal__content-scrollable': (!isFileInfo(fileInfo) || !fileInfo.archived) && this.state.loaded[this.state.imageIndex] && (fileType === FileTypes.PDF),
-                                    },
-                                )}
-                                onClick={this.handleBgClose}
-                            >
-                                {content}
-                            </div>
-                            { this.props.isMobileView &&
-                                <FilePreviewModalFooter
-                                    post={this.props.post}
-                                    showPublicLink={showPublicLink}
-                                    filename={fileName}
-                                    fileURL={fileDownloadUrl}
-                                    fileInfo={fileInfo}
-                                    enablePublicLink={this.props.enablePublicLink}
-                                    canDownloadFiles={this.props.canDownloadFiles}
-                                    canCopyContent={canCopyContent}
-                                    isExternalFile={isExternalFile}
-                                    handleModalClose={this.handleModalClose}
-                                    content={this.state.content}
-                                />
-                            }
                             <Modal.Title
                                 componentClass='div'
                                 id='viewImageModalLabel'
@@ -476,6 +450,33 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
                                 />
                                 {zoomBar}
                             </Modal.Title>
+                            <div
+                                className={classNames(
+                                    'file-preview-modal__content',
+                                    {
+                                        'file-preview-modal__content-scrollable': (!isFileInfo(fileInfo) || !fileInfo.archived) && this.state.loaded[this.state.imageIndex] && (fileType === FileTypes.PDF),
+                                        'file-preview-modal__image': fileType === FileTypes.IMAGE || fileType === FileTypes.SVG,
+                                    },
+                                )}
+                                onClick={this.handleBgClose}
+                            >
+                                {content}
+                            </div>
+                            { this.props.isMobileView &&
+                                <FilePreviewModalFooter
+                                    post={this.props.post}
+                                    showPublicLink={showPublicLink}
+                                    filename={fileName}
+                                    fileURL={fileDownloadUrl}
+                                    fileInfo={fileInfo}
+                                    enablePublicLink={this.props.enablePublicLink}
+                                    canDownloadFiles={this.props.canDownloadFiles}
+                                    canCopyContent={canCopyContent}
+                                    isExternalFile={isExternalFile}
+                                    handleModalClose={this.handleModalClose}
+                                    content={this.state.content}
+                                />
+                            }
                         </div>
                     </div>
                 </Modal.Body>
