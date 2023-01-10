@@ -83,6 +83,6 @@ describe('components/view_image/ImagePreview', () => {
         );
 
         expect(wrapper.find('div').prop('className')).toBe('image_preview_div');
-        expect(wrapper.find('canvas').prop('className')).toBe('image_preview_canvas__normal');
+        expect(wrapper.find('img').prop('className')).toBe('image_preview__normal');
     });
 });
