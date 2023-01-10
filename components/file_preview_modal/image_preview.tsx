@@ -50,22 +50,23 @@ const fitImage = (width: number, height: number) => {
 export default function ImagePreview({fileInfo, toolbarZoom, setToolbarZoom}: Props) {
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({x: 0, y: 0});
+    const [cursorType, setCursorType] = useState('normal');
 
     const imgRef = useRef<HTMLImageElement>(null);
     const scale = useRef(1);
     const isMouseDown = useRef(false);
     const touch = useRef({x: 0, y: 0});
     const imageBorder = useRef({w: 0, h: 0});
+    const isFullscreen = useRef({horizontal: false, vertical: false});
 
     const maxZoom = fitImage(fileInfo.width, fileInfo.height);
-    let isFullscreen = {horizontal: false, vertical: false};
 
     const isExternalFile = !fileInfo.id;
 
     const clampOffset = (x: number, y: number) => {
         // Clamps the offset to something that is inside canvas or window depending on zoom level
         const {w, h} = imageBorder.current;
-        const {horizontal, vertical} = isFullscreen;
+        const {horizontal, vertical} = isFullscreen.current;
 
         if (scale.current <= maxZoom) {
             return {xPos: 0, yPos: 0};
@@ -100,7 +101,7 @@ export default function ImagePreview({fileInfo, toolbarZoom, setToolbarZoom}: Pr
             w: (maxWidth - (width * scale.current)) / 2,
             h: (maxHeight - (height * scale.current)) / 2,
         };
-        isFullscreen = {
+        isFullscreen.current = {
             horizontal: imageBorder.current.w <= 0,
             vertical: imageBorder.current.h <= 0,
         };
@@ -173,7 +174,14 @@ export default function ImagePreview({fileInfo, toolbarZoom, setToolbarZoom}: Pr
         `,
     };
 
-    const cursorType = scale.current === 1 ? 'normal' : dragging ? 'dragging' : 'hover'; // eslint-disable-line no-nested-ternary
+    // Change cursor to dragging only if the image in the canvas is zoomed and draggable
+    useEffect(() => {
+        if (isFullscreen.current.horizontal || isFullscreen.current.vertical) {
+            setCursorType(dragging ? 'dragging' : 'hover');
+        } else {
+            setCursorType('normal');
+        }
+    }, [isFullscreen.current, dragging]);
 
     return (
         <div className={containerClass}>
