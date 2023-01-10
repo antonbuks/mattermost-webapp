@@ -110,6 +110,7 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
             id = 0;
         }
         this.showImage(id);
+        this.setToolbarZoom('Automatic');
     }
 
     handlePrev = () => {
@@ -118,6 +119,7 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
             id = this.props.fileInfos.length - 1;
         }
         this.showImage(id);
+        this.setToolbarZoom('Automatic');
     }
 
     handleKeyPress = (e: KeyboardEvent) => {
@@ -423,31 +425,6 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
                             onMouseLeave={this.onMouseLeaveImage}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <Modal.Title
-                                componentClass='div'
-                                id='viewImageModalLabel'
-                                className='file-preview-modal__title'
-                            >
-                                <FilePreviewModalHeader
-                                    isMobileView={this.props.isMobileView}
-                                    post={this.props.post!}
-                                    showPublicLink={showPublicLink}
-                                    fileIndex={this.state.imageIndex}
-                                    totalFiles={this.props.fileInfos?.length}
-                                    filename={fileName}
-                                    fileURL={fileDownloadUrl}
-                                    fileInfo={fileInfo}
-                                    enablePublicLink={this.props.enablePublicLink}
-                                    canDownloadFiles={this.props.canDownloadFiles}
-                                    canCopyContent={canCopyContent}
-                                    isExternalFile={isExternalFile}
-                                    handlePrev={this.handlePrev}
-                                    handleNext={this.handleNext}
-                                    handleModalClose={this.handleModalClose}
-                                    content={this.state.content}
-                                />
-                                {zoomBar}
-                            </Modal.Title>
                             <div
                                 className={classNames(
                                     'file-preview-modal__content',
@@ -474,6 +451,31 @@ export default class FilePreviewModal extends React.PureComponent<Props, State> 
                                     content={this.state.content}
                                 />
                             }
+                            <Modal.Title
+                                componentClass='div'
+                                id='viewImageModalLabel'
+                                className='file-preview-modal__title'
+                            >
+                                <FilePreviewModalHeader
+                                    isMobileView={this.props.isMobileView}
+                                    post={this.props.post!}
+                                    showPublicLink={showPublicLink}
+                                    fileIndex={this.state.imageIndex}
+                                    totalFiles={this.props.fileInfos?.length}
+                                    filename={fileName}
+                                    fileURL={fileDownloadUrl}
+                                    fileInfo={fileInfo}
+                                    enablePublicLink={this.props.enablePublicLink}
+                                    canDownloadFiles={this.props.canDownloadFiles}
+                                    canCopyContent={canCopyContent}
+                                    isExternalFile={isExternalFile}
+                                    handlePrev={this.handlePrev}
+                                    handleNext={this.handleNext}
+                                    handleModalClose={this.handleModalClose}
+                                    content={this.state.content}
+                                />
+                                {zoomBar}
+                            </Modal.Title>
                         </div>
                     </div>
                 </Modal.Body>
