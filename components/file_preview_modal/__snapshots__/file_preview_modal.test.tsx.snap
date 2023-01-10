@@ -51,16 +51,6 @@ exports[`components/FilePreviewModal should fall back to default preview if plug
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <LoadingImagePreview
-            containerClass="view-image__loading"
-            loading="Loading"
-            progress={0}
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -129,6 +119,16 @@ exports[`components/FilePreviewModal should fall back to default preview if plug
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <LoadingImagePreview
+            containerClass="view-image__loading"
+            loading="Loading"
+            progress={0}
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -186,16 +186,6 @@ exports[`components/FilePreviewModal should match snapshot 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <LoadingImagePreview
-            containerClass="view-image__loading"
-            loading="Loading"
-            progress={0}
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -264,6 +254,16 @@ exports[`components/FilePreviewModal should match snapshot 1`] = `
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <LoadingImagePreview
+            containerClass="view-image__loading"
+            loading="Loading"
+            progress={0}
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -321,16 +321,6 @@ exports[`components/FilePreviewModal should match snapshot for external file 1`]
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <LoadingImagePreview
-            containerClass="view-image__loading"
-            loading="Loading"
-            progress={0}
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -399,6 +389,16 @@ exports[`components/FilePreviewModal should match snapshot for external file 1`]
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <LoadingImagePreview
+            containerClass="view-image__loading"
+            loading="Loading"
+            progress={0}
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -456,58 +456,6 @@ exports[`components/FilePreviewModal should match snapshot when plugin overrides
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <component
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "jpg",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            post={
-              Object {
-                "channel_id": "",
-                "create_at": 0,
-                "delete_at": 0,
-                "edit_at": 0,
-                "hashtags": "",
-                "id": "id",
-                "is_pinned": false,
-                "message": "post message",
-                "metadata": Object {
-                  "embeds": Array [],
-                  "emojis": Array [],
-                  "files": Array [],
-                  "images": Object {},
-                  "reactions": Array [],
-                },
-                "original_id": "",
-                "pending_post_id": "",
-                "props": Object {},
-                "reply_count": 0,
-                "root_id": "",
-                "type": "system_add_remove",
-                "update_at": 0,
-                "user_id": "user_id",
-              }
-            }
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -576,6 +524,58 @@ exports[`components/FilePreviewModal should match snapshot when plugin overrides
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <component
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "jpg",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            post={
+              Object {
+                "channel_id": "",
+                "create_at": 0,
+                "delete_at": 0,
+                "edit_at": 0,
+                "hashtags": "",
+                "id": "id",
+                "is_pinned": false,
+                "message": "post message",
+                "metadata": Object {
+                  "embeds": Array [],
+                  "emojis": Array [],
+                  "files": Array [],
+                  "images": Object {},
+                  "reactions": Array [],
+                },
+                "original_id": "",
+                "pending_post_id": "",
+                "props": Object {},
+                "reply_count": 0,
+                "root_id": "",
+                "type": "system_add_remove",
+                "update_at": 0,
+                "user_id": "user_id",
+              }
+            }
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -633,33 +633,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded 1`] = `
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <ImagePreview
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "jpg",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            setToolbarZoom={[Function]}
-            toolbarZoom="Automatic"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -732,6 +705,33 @@ exports[`components/FilePreviewModal should match snapshot, loaded 1`] = `
             toolbarZoom="Automatic"
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <ImagePreview
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "jpg",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            setToolbarZoom={[Function]}
+            toolbarZoom="Automatic"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -789,33 +789,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded and showing f
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <ImagePreview
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "jpg",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            setToolbarZoom={[Function]}
-            toolbarZoom="Automatic"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -888,6 +861,33 @@ exports[`components/FilePreviewModal should match snapshot, loaded and showing f
             toolbarZoom="Automatic"
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <ImagePreview
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "jpg",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            setToolbarZoom={[Function]}
+            toolbarZoom="Automatic"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -945,34 +945,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .js file
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <CodePreview
-            className="file-preview-modal__code-preview"
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "js",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            fileUrl="/api/v4/files/file_id"
-            getContent={[Function]}
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1041,6 +1013,34 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .js file
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content"
+          onClick={[Function]}
+        >
+          <CodePreview
+            className="file-preview-modal__code-preview"
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "js",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            fileUrl="/api/v4/files/file_id"
+            getContent={[Function]}
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -1098,32 +1098,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .m4a fil
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <Connect(AudioVideoPreview)
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "m4a",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            fileUrl="/api/v4/files/file_id"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1192,6 +1166,32 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .m4a fil
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content"
+          onClick={[Function]}
+        >
+          <Connect(AudioVideoPreview)
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "m4a",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            fileUrl="/api/v4/files/file_id"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -1249,32 +1249,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .mov fil
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <Connect(AudioVideoPreview)
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "mov",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            fileUrl="/api/v4/files/file_id"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1343,6 +1317,32 @@ exports[`components/FilePreviewModal should match snapshot, loaded with .mov fil
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content"
+          onClick={[Function]}
+        >
+          <Connect(AudioVideoPreview)
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "mov",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            fileUrl="/api/v4/files/file_id"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -1400,33 +1400,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with footer 1
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <ImagePreview
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "gif",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id_1",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            setToolbarZoom={[Function]}
-            toolbarZoom="Automatic"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1499,6 +1472,33 @@ exports[`components/FilePreviewModal should match snapshot, loaded with footer 1
             toolbarZoom="Automatic"
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <ImagePreview
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "gif",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id_1",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            setToolbarZoom={[Function]}
+            toolbarZoom="Automatic"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -1556,33 +1556,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with image 1`
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <ImagePreview
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "jpg",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            setToolbarZoom={[Function]}
-            toolbarZoom="Automatic"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1655,6 +1628,33 @@ exports[`components/FilePreviewModal should match snapshot, loaded with image 1`
             toolbarZoom="Automatic"
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content file-preview-modal__image"
+          onClick={[Function]}
+        >
+          <ImagePreview
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "jpg",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            setToolbarZoom={[Function]}
+            toolbarZoom="Automatic"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
@@ -1712,32 +1712,6 @@ exports[`components/FilePreviewModal should match snapshot, loaded with other fi
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
       >
-        <div
-          className="file-preview-modal__content"
-          onClick={[Function]}
-        >
-          <Connect(FileInfoPreview)
-            fileInfo={
-              Object {
-                "archived": false,
-                "clientId": "client_id",
-                "create_at": 1,
-                "delete_at": 1,
-                "extension": "other",
-                "has_preview_image": true,
-                "height": 200,
-                "id": "file_id",
-                "mime_type": "mime_type",
-                "name": "name",
-                "size": 1,
-                "update_at": 1,
-                "user_id": "user_id",
-                "width": 350,
-              }
-            }
-            fileUrl="/api/v4/files/file_id"
-          />
-        </div>
         <ModalTitle
           bsClass="modal-title"
           className="file-preview-modal__title"
@@ -1806,6 +1780,32 @@ exports[`components/FilePreviewModal should match snapshot, loaded with other fi
             totalFiles={1}
           />
         </ModalTitle>
+        <div
+          className="file-preview-modal__content"
+          onClick={[Function]}
+        >
+          <Connect(FileInfoPreview)
+            fileInfo={
+              Object {
+                "archived": false,
+                "clientId": "client_id",
+                "create_at": 1,
+                "delete_at": 1,
+                "extension": "other",
+                "has_preview_image": true,
+                "height": 200,
+                "id": "file_id",
+                "mime_type": "mime_type",
+                "name": "name",
+                "size": 1,
+                "update_at": 1,
+                "user_id": "user_id",
+                "width": 350,
+              }
+            }
+            fileUrl="/api/v4/files/file_id"
+          />
+        </div>
       </div>
     </div>
   </ModalBody>
