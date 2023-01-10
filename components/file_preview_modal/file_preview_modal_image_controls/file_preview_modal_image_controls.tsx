@@ -41,6 +41,7 @@ const FilePreviewModalImageControls = ({toolbarZoom, setToolbarZoom}: Props) => 
     for (const [zoomLevelKey, zoomLevel] of zoomLevels) {
         zoomLevelOptions.push(
             <option
+                className='image-controls__dropdown-option'
                 key={zoomLevelKey}
                 value={zoomLevelKey}
             >
